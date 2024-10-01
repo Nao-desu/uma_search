@@ -1,6 +1,7 @@
 from httpx import AsyncClient as Client
 import re
 import json
+import asyncio
 
 async def get_uma_data():
     async with Client() as client:
