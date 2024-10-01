@@ -25,8 +25,8 @@ async def get_uma_data():
     
     data = re.findall(r"=JSON.parse\('(.*?)'\)",main)
     skill = data[0]
-    support = data[1]
-    umaname = data[2]
+    umaname = data[1]
+    support = data[2]
     skill = skill.encode("utf-8").decode("unicode_escape")
     support = support.encode("utf-8").decode("unicode_escape")
     umaname = umaname.encode("utf-8").decode("unicode_escape")
@@ -73,6 +73,5 @@ async def get_uma_data():
     with open("./data/skill.json", "w", encoding="utf-8") as f:
         json.dump(skill_w_old, f, indent=4, ensure_ascii=False)
 
-
-
-
+if __name__ == '__main__':
+    asyncio.run(get_uma_data())
